@@ -31,7 +31,10 @@ const addNoteHandler = (request, h) => {
   const response = h.response({
     status: 'fail',
     message: 'Note failed to add!',
-  })
+  });
+  response.code(500);
+  
+  return response;
 };
 
 const getAllNotesHandler = () => ({
